@@ -4,7 +4,7 @@ build-backend = 'setuptools.build_meta'
 
 [project]
 name = "mcp-server-greeter"
-version = "0.1.1"
+version = "0.1.2"
 description = "A simple MCP server that greets you"
 authors = [
     {name="Adon Mathew", email="adon.pmpm@gmail.com"}
@@ -20,4 +20,4 @@ dependencies = [
 where = ["src"]
 
 [project.scripts]
-mcp-server-greeter = "mcp_server_greeter.main:main"
+mcp-server-greeter = "mcp_server_greeter.main:main" 

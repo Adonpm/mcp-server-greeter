@@ -7,7 +7,7 @@ async def greet(name:str) -> str:
     """Greet someone by name."""
     return f"Hello, {name}!"
 
-async def main():
+async def greet_server():
     # Register the tool explicitly
     server.register_tool(
         name="greet",
@@ -18,5 +18,5 @@ async def main():
     # Run the server
     await server.run()
 
-if __name__ == "__main__":
-    asyncio.run(main())
+def main():
+    asyncio.run(greet_server())
