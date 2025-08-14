@@ -3,12 +3,20 @@ import asyncio
 
 server = Server(name="Greeter Server")
 
-@server.tool()
 async def greet(name:str) -> str:
     """Greet someone by name."""
     return f"Hello, {name}!"
 
-def main():
-    """Entry point for the MCP server."""
-    asyncio.run(server.run())
-    
+async def main():
+    # Register the tool explicitly
+    server.register_tool(
+        name="greet",
+        description="Say hello to someone",
+        handler=greet
+    )
+
+    # Run the server
+    await server.run()
+
+if __name__ == "__main__":
+    asyncio.run(main())
